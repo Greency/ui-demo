@@ -7,6 +7,36 @@
   background-color: rgba(0,0,0,0.5);
 }
 
+.cy-notice {
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 10px 10px;
+  color: #fff;
+  border-radius: 0 0 2px 2px;
+  transition: all 200ms ease-out;
+  transform: translate3d(0, 0, 0);
+}
+.cy-notice--success {
+  background-color: #07c160;
+}
+.cy-notice--danger {
+  background-color: #f44;
+}
+.cy-notice--warning {
+  background-color: #ff976a;
+}
+.cy-notice-enter-active {
+  transition: all 0ms ease-out;
+  transform: translate3d(0, -100%, 0);
+}
+.cy-notice-leave-active {
+  transform: translate3d(0, -100%, 0);
+}
+
 @font-face {
   font-family: 'iconfont'; /* project id 1250118 */
   src: url("https://at.alicdn.com/t/font_1250118_vva3pbei1k.eot");
@@ -174,21 +204,46 @@
   text-align: center;
 }
 
-.cy-swipe-cell {
-  position: relative;
-  width: 100%;
+.cy-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  width: 75%;
+  padding-top: 10px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 2px;
   overflow: hidden;
 }
-.cy-swipe-cell-content {
-  position: relative;
-  width: 100%;
-  transition: all 200ms ease;
+.cy-modal-title {
+  text-align: center;
+  font-size: 18px;
 }
-.cy-swipe-cell-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
+.cy-modal-content {
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 15px;
+}
+.cy-modal .cy-button-group {
+  display: flex;
+}
+.cy-modal .cy-button-group button {
+  width: 50%;
+}
+.cy-modal .cy-button-group button:first-child {
+  border-right: 1px solid #ebedf0;
+}
+.cy-modal .cy-button-submit {
+  color: #09bb07;
+}
+.cy-modal .cy-button-left {
+  order: -1;
+}
+.cy-modal button {
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
 }
 .cy-toast {
   box-sizing: border-box;
@@ -332,6 +387,35 @@
   border-right-width: 0;
   border-bottom-width: 0;
 }
+.cy-notice {
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 10px 10px;
+  color: #fff;
+  border-radius: 0 0 2px 2px;
+  transition: all 200ms ease-out;
+  transform: translate3d(0, 0, 0);
+}
+.cy-notice--success {
+  background-color: #07c160;
+}
+.cy-notice--danger {
+  background-color: #f44;
+}
+.cy-notice--warning {
+  background-color: #ff976a;
+}
+.cy-notice-enter-active {
+  transition: all 0ms ease-out;
+  transform: translate3d(0, -100%, 0);
+}
+.cy-notice-leave-active {
+  transform: translate3d(0, -100%, 0);
+}
 .cy-mask {
   position: fixed;
   top: 0;
@@ -379,47 +463,6 @@
 .cy-switch--on {
   background-color: #09bb07;
 }
-.cy-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 999;
-  width: 75%;
-  padding-top: 10px;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 2px;
-  overflow: hidden;
-}
-.cy-modal-title {
-  text-align: center;
-  font-size: 18px;
-}
-.cy-modal-content {
-  padding: 15px 10px;
-  text-align: center;
-  font-size: 15px;
-}
-.cy-modal .cy-button-group {
-  display: flex;
-}
-.cy-modal .cy-button-group button {
-  width: 50%;
-}
-.cy-modal .cy-button-group button:first-child {
-  border-right: 1px solid #ebedf0;
-}
-.cy-modal .cy-button-submit {
-  color: #09bb07;
-}
-.cy-modal .cy-button-left {
-  order: -1;
-}
-.cy-modal button {
-  border-left-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-}
 .cy-loading {
   box-sizing: border-box;
   display: inline-flex;
@@ -443,6 +486,22 @@
 }
 .cy-loading-content {
   text-align: center;
+}
+.cy-swipe-cell {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.cy-swipe-cell-content {
+  position: relative;
+  width: 100%;
+  transition: all 200ms ease;
+}
+.cy-swipe-cell-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 ul {
   margin: 0;
